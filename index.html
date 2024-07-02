@@ -3,12 +3,23 @@ layout: default
 title: Robin Zachariah Tharakan
 ---
 
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left; border: 1px solid #ccc; padding: 20px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); max-width: 500px;">
+        <img src="images\selfie.png" alt="Photo" style="border-radius: 50%; max-width: 150px; float: left; margin-right: 20px;">
+        <div style="overflow: hidden;">
+            <h2 style="margin-top: 0;">Your Name</h2>
+            <p>Your bio text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+
+
+
 <div id="home">
-	<img src="images\selfie.png" alt="Photo" align="left" style="margin-right:15px" width="100px">
-		Running up the hill <br />
 	<ul class="posts">
 		{% for post in site.posts limit:4 %}
 			<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
 		{% endfor %}
 	</ul>
-</div>
+</div> 

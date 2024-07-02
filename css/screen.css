@@ -16,11 +16,12 @@ html, body {
 }
 
 body {
-  background-color: white;
-  font:12.34px "helvetica neue", helvetica, arial, clean, sans-serif;
+  background-color: whitesmoke;
+	font:12.34px "helvetica neue", helvetica, arial, clean, sans-serif;
 	font-size:small;
 	text-align:center;
 }
+	
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
@@ -83,7 +84,34 @@ ul.posts {
   text-align: justify;
   width: 42em;
   margin: 3em auto 2em auto;
-  line-height: 1.5em;
+  line-height: 1.5em; 
+}
+
+img.hello {
+	position: relative;
+	border: solid 5px white;
+	margin: 0 10px 25px; 
+	height: 60px;
+	width: 60px;
+	-moz-box-shadow: 1px 1px 5px #999;
+	box-shadow: 1px 1px 5px #999;
+  box-shadow: 1px 1px 5px #999;
+	transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+	left: -5px;
+}
+
+img.hello:hover {
+	transform: scale(1.16);
+	-moz-transform: scale(1.16);
+	transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+	position: relative;
+	z-index: 5;
 }
 
 .title {
