@@ -17,7 +17,7 @@ html, body {
 
 body {
   background-color: white;
-  font:12.34px helvetica, arial, clean, sans-serif;
+  font:12.34px "helvetica neue", helvetica, arial, clean, sans-serif;
 	font-size:small;
 	text-align:center;
 }
@@ -95,7 +95,7 @@ ul.posts {
   .site .title a {
     color: #a00;
     text-decoration: none;
-  }
+}
 
   .site .title a:hover {
     color: black;
