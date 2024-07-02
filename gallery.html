@@ -1,0 +1,67 @@
+---
+layout: default
+title: Gallery | Robin Z. Tharakan
+---
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+    /* CSS for styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .gallery img {
+        width: calc(33.33% - 10px); /* 33.33% for three images per row, minus gap */
+        max-width: 200px;
+        max-height: 200px;
+        height: auto; /* Maintain aspect ratio */ 
+        object-fit: cover;
+        border-radius: 5px;
+        border: 0px solid #ffffff;
+    }
+    </style>
+    </head>
+    
+    <div class="home">
+    
+    <div class="gallery" id="gallery">
+        <!-- Images will be displayed here -->
+    </div>
+    
+    <script>
+    // JavaScript to fetch and display images from a folder
+    window.onload = function() {
+        var gallery = document.getElementById('gallery');
+        var folderPath = 'images/gallery/'; 
+    
+        fetch(folderPath)
+            .then(response => response.text())
+            .then(data => {
+                // Parse the HTML string response to extract image URLs
+                var parser = new DOMParser();
+                var htmlDoc = parser.parseFromString(data, 'text/html');
+                var imageElements = htmlDoc.getElementsByTagName('a');
+    
+                // Loop through image elements and create <img> tags for each
+                for (var i = 0; i < imageElements.length; i++) {
+                    var imageUrl = folderPath + imageElements[i].getAttribute('href');
+                    var img = document.createElement('img');
+                    img.src = imageUrl;
+                    gallery.appendChild(img);
+                }
+            })
+            .catch(error => console.error('Error fetching images:', error));
+    };
+    </script>
+
+    </div>
